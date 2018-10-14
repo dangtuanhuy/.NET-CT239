@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a92b761aa78c4de4bfc578203cec3e79" Name="Diagram1">
+        <EntityTypeShape EntityType="MyWatchWatchModel.About" Width="1.5" PointX="6" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyWatchWatchModel.Branch" Width="1.5" PointX="6" PointY="24.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyWatchWatchModel.Category" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyWatchWatchModel.Contact" Width="1.5" PointX="5.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyWatchWatchModel.Customer" Width="1.5" PointX="0.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyWatchWatchModel.Delivery" Width="1.5" PointX="6" PointY="27.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyWatchWatchModel.Employee" Width="1.5" PointX="3.75" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyWatchWatchModel.ImgNew" Width="1.5" PointX="8.25" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyWatchWatchModel.ImgProduct" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyWatchWatchModel.News" Width="1.5" PointX="6" PointY="30.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyWatchWatchModel.Order" Width="1.5" PointX="3" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyWatchWatchModel.OrderDetail" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyWatchWatchModel.PaymentMethod" Width="1.5" PointX="0.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyWatchWatchModel.Product" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyWatchWatchModel.Promotion" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyWatchWatchModel.Role" Width="1.5" PointX="1.5" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyWatchWatchModel.Slider" Width="1.5" PointX="2.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyWatchWatchModel.Supplier" Width="1.5" PointX="0.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyWatchWatchModel.sysdiagram" Width="1.5" PointX="7.75" PointY="2.125" IsExpanded="true" />
+        <AssociationConnector Association="MyWatchWatchModel.FK_About_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="MyWatchWatchModel.FK_Branch_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="MyWatchWatchModel.FK_Products_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="MyWatchWatchModel.FK_Customer_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="MyWatchWatchModel.FK_Order_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="MyWatchWatchModel.FK_Delivery_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="MyWatchWatchModel.FK_Employee_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="MyWatchWatchModel.FK_News_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="MyWatchWatchModel.FK_ImgNews_News" ManuallyRouted="false" />
+        <AssociationConnector Association="MyWatchWatchModel.FK_ImgProducts_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="MyWatchWatchModel.FK_Order_PaymentMethod" ManuallyRouted="false" />
+        <AssociationConnector Association="MyWatchWatchModel.FK_OrderDetails_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="MyWatchWatchModel.FK_OrderDetails_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="MyWatchWatchModel.FK_Products_Promotion" ManuallyRouted="false" />
+        <AssociationConnector Association="MyWatchWatchModel.FK_Products_Supplier" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
