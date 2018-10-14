@@ -12,19 +12,21 @@ namespace MyWatchWatch.Controllers
         {
             return View();
         }
-
-        public ActionResult About()
+        public ActionResult _slider()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            return PartialView();
         }
-
-        public ActionResult Contact()
+        public ActionResult _partiview1()
         {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            return PartialView();
+        }
+        public ActionResult _product1()
+        {
+            return PartialView();
+        }
+        public ActionResult _product2()
+        {
+            return PartialView();
         }
     }
 }
