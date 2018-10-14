@@ -605,6 +605,7 @@
     <Content Include="Library\Admin\vendor\popper.js\umd\popper-utils.min.js" />
     <Content Include="Library\Admin\vendor\popper.js\umd\popper.js" />
     <Content Include="Library\Admin\vendor\popper.js\umd\popper.min.js" />
+    <Content Include="Library\myIcon.ico" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
