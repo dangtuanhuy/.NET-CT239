@@ -20,27 +20,6 @@
 </div>
 <!--banner-ends-->
 <!--Slider-Starts-Here-->
-<script src="~/Library/User/js/responsiveslides.min.js"></script>
-<script>
-        // You can also use "$(window).load(function() {"
-        $(function () {
-            // Slideshow 4
-            $("#slider4").responsiveSlides({
-                auto: true,
-                pager: true,
-                nav: true,
-                speed: 500,
-                namespace: "callbacks",
-                before: function () {
-                    $('.events').append("<li>before event fired.</li>");
-                },
-                after: function () {
-                    $('.events').append("<li>after event fired.</li>");
-                }
-            });
-
-        });
-</script>
 <!--End-slider-script-->
 <!--about-starts-->
 <div class="about">
@@ -195,5 +174,26 @@
         </div>
     </div>
 </div>
+<script src="~/Library/User/js/responsiveslides.min.js"></script>
+<script>
+    // You can also use "$(window).load(function() {"
+    $(function () {
+        // Slideshow 4
+        $("#slider4").responsiveSlides({
+            auto: true,
+            pager: true,
+            nav: true,
+            speed: 500,
+            namespace: "callbacks",
+            before: function () {
+                $('.events').append("<li>before event fired.</li>");
+            },
+            after: function () {
+                $('.events').append("<li>after event fired.</li>");
+            }
+        });
+
+    });
+</script>
 <!--product-end-->
 <!--information-starts-->
