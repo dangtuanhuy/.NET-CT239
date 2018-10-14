@@ -48,6 +48,12 @@
     <Reference Include="CaptchaMvc, Version=2.5.0.0, Culture=neutral, PublicKeyToken=fe46ad421dd3b0e6, processorArchitecture=MSIL">
       <HintPath>..\packages\CaptchaMvc.Mvc5.1.5.0\lib\net45-full\CaptchaMvc.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
@@ -58,6 +64,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -174,6 +182,16 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MyWatchWatch.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyWatchWatch.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MyWatchWatch.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyWatchWatch.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -650,6 +668,10 @@
     <Content Include="Library\User\js\memenu.js" />
     <Content Include="Library\User\js\responsiveslides.min.js" />
     <Content Include="Library\User\js\simpleCart.min.js" />
+    <Content Include="Models\MyWatchWatch.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MyWatchWatch.Context.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -678,6 +700,13 @@
     <Content Include="Library\User\fonts\Lora-Regular.ttf" />
     <Content Include="Library\User\fonts\Muli-Regular.ttf" />
     <Content Include="Library\User\fonts\Philosopher-Regular.ttf" />
+    <EntityDeploy Include="Models\MyWatchWatch.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MyWatchWatch.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\MyWatchWatch.edmx.diagram">
+      <DependentUpon>MyWatchWatch.edmx</DependentUpon>
+    </None>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -712,7 +741,6 @@
     <Folder Include="Areas\Management\Models\" />
     <Folder Include="Library\Admin\vendor\font-awesome\less\" />
     <Folder Include="Library\Admin\vendor\font-awesome\scss\" />
-    <Folder Include="Models\" />
     <Folder Include="MyImg\About\" />
     <Folder Include="MyImg\Branch\" />
     <Folder Include="MyImg\Delivery\" />
@@ -732,6 +760,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
