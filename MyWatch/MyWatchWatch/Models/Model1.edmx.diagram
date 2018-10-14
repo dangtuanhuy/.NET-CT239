@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="09e607ff7ed8456b8d6d6b013b350421" Name="Diagram1">
+      <Diagram DiagramId="a92b761aa78c4de4bfc578203cec3e79" Name="Diagram1">
         <EntityTypeShape EntityType="MyWatchWatchModel.About" Width="1.5" PointX="6" PointY="21.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MyWatchWatchModel.Branch" Width="1.5" PointX="6" PointY="24.625" IsExpanded="true" />
         <EntityTypeShape EntityType="MyWatchWatchModel.Category" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
