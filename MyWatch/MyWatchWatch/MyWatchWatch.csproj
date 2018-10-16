@@ -253,6 +253,7 @@
     <Compile Include="Models\Promotion.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\PromotionMetaData.cs" />
     <Compile Include="Models\Role.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -281,6 +282,7 @@
     <Content Include="Library\Admin\css\custom.css" />
     <Content Include="Library\Admin\css\fontastic.css" />
     <Content Include="Library\Admin\css\grasp_mobile_progress_circle-1.0.0.min.css" />
+    <Content Include="Library\Admin\css\jquery-ui.min.css" />
     <Content Include="Library\Admin\css\style.blue.css" />
     <Content Include="Library\Admin\css\style.default.css" />
     <Content Include="Library\Admin\css\style.green.css" />
@@ -624,6 +626,7 @@
     <Content Include="Library\Admin\js\charts-home.js" />
     <Content Include="Library\Admin\js\front.js" />
     <Content Include="Library\Admin\js\grasp_mobile_progress_circle-1.0.0.min.js" />
+    <Content Include="Library\Admin\js\jquery-ui.min.js" />
     <Content Include="Library\Admin\vendor\bootstrap\css\bootstrap-grid.css" />
     <Content Include="Library\Admin\vendor\bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="Library\Admin\vendor\bootstrap\css\bootstrap-reboot.css" />
@@ -825,7 +828,6 @@
     <Content Include="Areas\Management\Views\Categories\Index.cshtml" />
     <Content Include="Areas\Management\Views\Suppliers\Create.cshtml" />
     <Content Include="Areas\Management\Views\Suppliers\Delete.cshtml" />
-    <Content Include="Areas\Management\Views\Suppliers\Details.cshtml" />
     <Content Include="Areas\Management\Views\Suppliers\Edit.cshtml" />
     <Content Include="Areas\Management\Views\Suppliers\Index.cshtml" />
     <Content Include="Areas\Management\Views\Products\Create.cshtml" />
@@ -840,7 +842,6 @@
     <Content Include="Areas\Management\Views\Branches\Index.cshtml" />
     <Content Include="Areas\Management\Views\Promotions\Create.cshtml" />
     <Content Include="Areas\Management\Views\Promotions\Delete.cshtml" />
-    <Content Include="Areas\Management\Views\Promotions\Details.cshtml" />
     <Content Include="Areas\Management\Views\Promotions\Edit.cshtml" />
     <Content Include="Areas\Management\Views\Promotions\Index.cshtml" />
     <Content Include="Areas\Management\Views\Deliveries\Create.cshtml" />

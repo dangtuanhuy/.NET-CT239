@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Validation;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using MyWatchWatch.Models;
 
@@ -143,7 +140,7 @@ namespace MyWatchWatch.Areas.Management.Controllers
             {
                 db.Suppliers.Remove(supplier);
                 db.SaveChanges();
-                TempData["msg1"] = "<script>alert('Can not Delete Record');</script>";
+                return RedirectToAction("Index");
             }
             catch (Exception e)
             {

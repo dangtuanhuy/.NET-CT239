@@ -5,69 +5,73 @@
     Layout = "~/Areas/Management/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Delete</h2>
+<section class="dashboard-header section-padding">
+    <div class="container">
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Promotion</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.PromotionName)
-        </dt>
+        <h3>Are you sure you want to delete this?</h3>
+        <div>
 
-        <dd>
-            @Html.DisplayFor(model => model.PromotionName)
-        </dd>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.PromotionName)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PromotionDetails)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.PromotionName)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.PromotionDetails)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.PromotionDetails)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PromotionDiscount)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.PromotionDetails)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.PromotionDiscount)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.PromotionDiscount)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PromotionStatus)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.PromotionDiscount)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.PromotionStatus)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.PromotionStatus)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PromotionOpen)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.PromotionStatus)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.PromotionOpen)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.PromotionOpen)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PromotionClose)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.PromotionOpen)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.PromotionClose)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.PromotionClose)
+                </dt>
 
-    </dl>
+                <dd>
+                    @Html.DisplayFor(model => model.PromotionClose)
+                </dd>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+            </dl>
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-danger" /> |
+                    <a href="@Url.Action("Index","Promotions")" class="btn btn-default">Management</a>
+                </div>
+            }
         </div>
-    }
-</div>
+    </div>
+</section>
