@@ -188,6 +188,7 @@
     <Compile Include="Areas\Management\Controllers\SlidersController.cs" />
     <Compile Include="Areas\Management\Controllers\SuppliersController.cs" />
     <Compile Include="Areas\Management\ManagementAreaRegistration.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -222,6 +223,7 @@
     <Compile Include="Models\ImgProduct.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ItemGioHang.cs" />
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -901,6 +903,10 @@
     <Content Include="Views\Home\_product1.cshtml" />
     <Content Include="Views\Home\_product2.cshtml" />
     <Content Include="Views\Home\_slider.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\Cart\XemGioHang.cshtml" />
+    <Content Include="Views\Cart\ThongBao.cshtml" />
+    <Content Include="Views\Cart\ShoppingPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
