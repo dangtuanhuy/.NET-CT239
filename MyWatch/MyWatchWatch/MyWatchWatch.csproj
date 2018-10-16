@@ -832,7 +832,6 @@
     <Content Include="Areas\Management\Views\Suppliers\Index.cshtml" />
     <Content Include="Areas\Management\Views\Products\Create.cshtml" />
     <Content Include="Areas\Management\Views\Products\Delete.cshtml" />
-    <Content Include="Areas\Management\Views\Products\Details.cshtml" />
     <Content Include="Areas\Management\Views\Products\Edit.cshtml" />
     <Content Include="Areas\Management\Views\Products\Index.cshtml" />
     <Content Include="Areas\Management\Views\Branches\Create.cshtml" />
@@ -864,6 +863,7 @@
     <Content Include="Areas\Management\Views\News\Details.cshtml" />
     <Content Include="Areas\Management\Views\News\Edit.cshtml" />
     <Content Include="Areas\Management\Views\News\Index.cshtml" />
+    <Content Include="Areas\Management\Views\Products\UploadProducts.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

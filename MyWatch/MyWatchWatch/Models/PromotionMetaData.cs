@@ -14,7 +14,7 @@ namespace MyWatchWatch.Models
             [Required(ErrorMessage = "Record can not null")]
             public int PromotionId { get; set; }
 
-            [Display(Name = "Name")]
+            [Display(Name = "Promotion")]
             [Required(ErrorMessage = "Record can not null")]
             public string PromotionName { get; set; }
 
