@@ -201,6 +201,7 @@
     <Compile Include="Models\Category.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CategoryMetaData.cs" />
     <Compile Include="Models\Contact.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -286,6 +287,39 @@
     <Content Include="Library\Admin\css\style.red.css" />
     <Content Include="Library\Admin\css\style.sea.css" />
     <Content Include="Library\Admin\css\style.violet.css" />
+    <Content Include="Library\Admin\DataTables\DataTables-1.10.18\css\dataTables.bootstrap.css" />
+    <Content Include="Library\Admin\DataTables\DataTables-1.10.18\css\dataTables.bootstrap.min.css" />
+    <Content Include="Library\Admin\DataTables\DataTables-1.10.18\css\dataTables.bootstrap4.css" />
+    <Content Include="Library\Admin\DataTables\DataTables-1.10.18\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Library\Admin\DataTables\DataTables-1.10.18\css\dataTables.foundation.css" />
+    <Content Include="Library\Admin\DataTables\DataTables-1.10.18\css\dataTables.foundation.min.css" />
+    <Content Include="Library\Admin\DataTables\DataTables-1.10.18\css\dataTables.jqueryui.css" />
+    <Content Include="Library\Admin\DataTables\DataTables-1.10.18\css\dataTables.jqueryui.min.css" />
+    <Content Include="Library\Admin\DataTables\DataTables-1.10.18\css\dataTables.semanticui.css" />
+    <Content Include="Library\Admin\DataTables\DataTables-1.10.18\css\dataTables.semanticui.min.css" />
+    <Content Include="Library\Admin\DataTables\DataTables-1.10.18\css\jquery.dataTables.css" />
+    <Content Include="Library\Admin\DataTables\DataTables-1.10.18\css\jquery.dataTables.min.css" />
+    <Content Include="Library\Admin\DataTables\DataTables-1.10.18\images\sort_asc.png" />
+    <Content Include="Library\Admin\DataTables\DataTables-1.10.18\images\sort_asc_disabled.png" />
+    <Content Include="Library\Admin\DataTables\DataTables-1.10.18\images\sort_both.png" />
+    <Content Include="Library\Admin\DataTables\DataTables-1.10.18\images\sort_desc.png" />
+    <Content Include="Library\Admin\DataTables\DataTables-1.10.18\images\sort_desc_disabled.png" />
+    <Content Include="Library\Admin\DataTables\DataTables-1.10.18\js\dataTables.bootstrap.js" />
+    <Content Include="Library\Admin\DataTables\DataTables-1.10.18\js\dataTables.bootstrap.min.js" />
+    <Content Include="Library\Admin\DataTables\DataTables-1.10.18\js\dataTables.bootstrap4.js" />
+    <Content Include="Library\Admin\DataTables\DataTables-1.10.18\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Library\Admin\DataTables\DataTables-1.10.18\js\dataTables.foundation.js" />
+    <Content Include="Library\Admin\DataTables\DataTables-1.10.18\js\dataTables.foundation.min.js" />
+    <Content Include="Library\Admin\DataTables\DataTables-1.10.18\js\dataTables.jqueryui.js" />
+    <Content Include="Library\Admin\DataTables\DataTables-1.10.18\js\dataTables.jqueryui.min.js" />
+    <Content Include="Library\Admin\DataTables\DataTables-1.10.18\js\dataTables.semanticui.js" />
+    <Content Include="Library\Admin\DataTables\DataTables-1.10.18\js\dataTables.semanticui.min.js" />
+    <Content Include="Library\Admin\DataTables\DataTables-1.10.18\js\jquery.dataTables.js" />
+    <Content Include="Library\Admin\DataTables\DataTables-1.10.18\js\jquery.dataTables.min.js" />
+    <Content Include="Library\Admin\DataTables\datatables.css" />
+    <Content Include="Library\Admin\DataTables\datatables.js" />
+    <Content Include="Library\Admin\DataTables\datatables.min.css" />
+    <Content Include="Library\Admin\DataTables\datatables.min.js" />
     <Content Include="Library\Admin\fonts\dashboard.svg" />
     <Content Include="Library\Admin\icons-reference\fonts\dashboard.svg" />
     <Content Include="Library\Admin\icons-reference\icons-reference.html" />
@@ -786,7 +820,6 @@
     </Content>
     <Content Include="Areas\Management\Views\Categories\Create.cshtml" />
     <Content Include="Areas\Management\Views\Categories\Delete.cshtml" />
-    <Content Include="Areas\Management\Views\Categories\Details.cshtml" />
     <Content Include="Areas\Management\Views\Categories\Edit.cshtml" />
     <Content Include="Areas\Management\Views\Categories\Index.cshtml" />
     <Content Include="Areas\Management\Views\Suppliers\Create.cshtml" />
@@ -799,11 +832,6 @@
     <Content Include="Areas\Management\Views\Products\Details.cshtml" />
     <Content Include="Areas\Management\Views\Products\Edit.cshtml" />
     <Content Include="Areas\Management\Views\Products\Index.cshtml" />
-    <Content Include="Areas\Management\Views\News\Create.cshtml" />
-    <Content Include="Areas\Management\Views\News\Delete.cshtml" />
-    <Content Include="Areas\Management\Views\News\Details.cshtml" />
-    <Content Include="Areas\Management\Views\News\Edit.cshtml" />
-    <Content Include="Areas\Management\Views\News\Index.cshtml" />
     <Content Include="Areas\Management\Views\Branches\Create.cshtml" />
     <Content Include="Areas\Management\Views\Branches\Delete.cshtml" />
     <Content Include="Areas\Management\Views\Branches\Details.cshtml" />
@@ -829,6 +857,11 @@
     <Content Include="Areas\Management\Views\Sliders\Details.cshtml" />
     <Content Include="Areas\Management\Views\Sliders\Edit.cshtml" />
     <Content Include="Areas\Management\Views\Sliders\Index.cshtml" />
+    <Content Include="Areas\Management\Views\News\Create.cshtml" />
+    <Content Include="Areas\Management\Views\News\Delete.cshtml" />
+    <Content Include="Areas\Management\Views\News\Details.cshtml" />
+    <Content Include="Areas\Management\Views\News\Edit.cshtml" />
+    <Content Include="Areas\Management\Views\News\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

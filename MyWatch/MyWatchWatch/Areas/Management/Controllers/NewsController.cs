@@ -48,7 +48,7 @@ namespace MyWatchWatch.Areas.Management.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "NewsId,NewTitles,NewsDetails,NewsBy,NewsDate,EmployeeCode")] News news)
+        public ActionResult Create([Bind(Include = "NewsId,NewTitles,NewsDetails,NewsDate,EmployeeCode")] News news)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace MyWatchWatch.Areas.Management.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "NewsId,NewTitles,NewsDetails,NewsBy,NewsDate,EmployeeCode")] News news)
+        public ActionResult Edit([Bind(Include = "NewsId,NewTitles,NewsDetails,NewsDate,EmployeeCode")] News news)
         {
             if (ModelState.IsValid)
             {
