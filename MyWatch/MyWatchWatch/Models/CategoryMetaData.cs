@@ -11,6 +11,9 @@ namespace MyWatchWatch.Models
     {
         internal sealed class CategoryMetaData
         {
+            [Display(Name = "ID")]
+            public int CategoryId { get; set; }
+
             [Display(Name = "Category")]
             [Required(ErrorMessage ="Record can not null")]
             public string CategoryName { get; set; }

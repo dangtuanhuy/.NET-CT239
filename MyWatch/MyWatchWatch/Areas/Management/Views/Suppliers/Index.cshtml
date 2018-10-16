@@ -10,6 +10,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+@Html.Raw(TempData["msg1"])
 <table class="table">
     <tr>
         <th>
@@ -42,41 +43,42 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CompanyName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ContactName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ContactTitle)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Address)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Phone)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Fax)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HomePage)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Status_Supplier)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Create_Supplier)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.SupplierId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.SupplierId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.SupplierId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HomePage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status_Supplier)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Create_Supplier)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.SupplierId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.SupplierId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.SupplierId })
+            </td>
+        </tr>
+    }
 
 </table>
