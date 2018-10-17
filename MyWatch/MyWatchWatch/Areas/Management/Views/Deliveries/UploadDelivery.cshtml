@@ -7,7 +7,7 @@
     <div class="container">
         <br />
         <h2 class="text-center">Delivery</h2>
-        <div><a href="@Url.Action("Index","Deliveries")" class="btn btn-info">Quản lý</a></div>
+        <div><a href="@Url.Action("Index","Deliveries")" class="btn btn-info">Management</a></div>
         @using (Html.BeginForm("UploadDelivery", "Deliveries", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
             @Html.AntiForgeryToken()

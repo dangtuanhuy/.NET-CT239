@@ -875,6 +875,9 @@
     <Content Include="Areas\Management\Views\Employees\UploadEmployees.cshtml" />
     <Content Include="Areas\Management\Views\News\UploadNews.cshtml" />
     <Content Include="Areas\Management\Views\Deliveries\UploadDelivery.cshtml" />
+    <Content Include="Areas\Management\Views\Page\_countProducts.cshtml" />
+    <Content Include="Areas\Management\Views\Page\_statusPromotin.cshtml" />
+    <Content Include="Areas\Management\Views\Page\_countCustomer.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
