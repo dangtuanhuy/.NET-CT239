@@ -199,6 +199,7 @@
     <Compile Include="Models\Branch.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\BranchMetaData.cs" />
     <Compile Include="Models\Category.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -209,6 +210,7 @@
     <Compile Include="Models\Customer.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\DelieveryMetaData.cs" />
     <Compile Include="Models\Delivery.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -242,6 +244,7 @@
     <Compile Include="Models\News.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\NewsMetaData.cs" />
     <Compile Include="Models\Order.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -845,7 +848,6 @@
     <Content Include="Areas\Management\Views\Products\Index.cshtml" />
     <Content Include="Areas\Management\Views\Branches\Create.cshtml" />
     <Content Include="Areas\Management\Views\Branches\Delete.cshtml" />
-    <Content Include="Areas\Management\Views\Branches\Details.cshtml" />
     <Content Include="Areas\Management\Views\Branches\Edit.cshtml" />
     <Content Include="Areas\Management\Views\Branches\Index.cshtml" />
     <Content Include="Areas\Management\Views\Promotions\Create.cshtml" />
@@ -854,7 +856,6 @@
     <Content Include="Areas\Management\Views\Promotions\Index.cshtml" />
     <Content Include="Areas\Management\Views\Deliveries\Create.cshtml" />
     <Content Include="Areas\Management\Views\Deliveries\Delete.cshtml" />
-    <Content Include="Areas\Management\Views\Deliveries\Details.cshtml" />
     <Content Include="Areas\Management\Views\Deliveries\Edit.cshtml" />
     <Content Include="Areas\Management\Views\Deliveries\Index.cshtml" />
     <Content Include="Areas\Management\Views\Employees\Create.cshtml" />
@@ -868,11 +869,12 @@
     <Content Include="Areas\Management\Views\Sliders\Index.cshtml" />
     <Content Include="Areas\Management\Views\News\Create.cshtml" />
     <Content Include="Areas\Management\Views\News\Delete.cshtml" />
-    <Content Include="Areas\Management\Views\News\Details.cshtml" />
     <Content Include="Areas\Management\Views\News\Edit.cshtml" />
     <Content Include="Areas\Management\Views\News\Index.cshtml" />
     <Content Include="Areas\Management\Views\Products\UploadProducts.cshtml" />
     <Content Include="Areas\Management\Views\Employees\UploadEmployees.cshtml" />
+    <Content Include="Areas\Management\Views\News\UploadNews.cshtml" />
+    <Content Include="Areas\Management\Views\Deliveries\UploadDelivery.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
