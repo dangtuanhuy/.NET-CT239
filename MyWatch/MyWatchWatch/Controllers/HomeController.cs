@@ -12,13 +12,13 @@ namespace MyWatchWatch.Controllers
         MyWatchWatchEntities db = new MyWatchWatchEntities();
         public ActionResult Index()
         {
-            var lstProduct1 = db.Products.Where(n => n.ProductStatus == true && n.CategoryId == 2);
+            var lstProduct1 = db.Products.Where(n => n.ProductStatus == true && n.Style == 1);
             ViewBag.ListProduct1 = lstProduct1;
 
-            var lstProduct2 = db.Products.Where(n => n.ProductStatus == true && n.CategoryId == 3);
+            var lstProduct2 = db.Products.Where(n => n.ProductStatus == true && n.Style == 2);
             ViewBag.ListProduct2 = lstProduct2;
 
-            var lstProduct3 = db.Products.Where(n => n.ProductStatus == true && n.CategoryId == 4);
+            var lstProduct3 = db.Products.Where(n => n.ProductStatus == true && n.Style == 3);
             ViewBag.ListProduct3 = lstProduct3;
            
             return View();
@@ -61,6 +61,10 @@ namespace MyWatchWatch.Controllers
             return PartialView();
         }
         public ActionResult _product2()
+        {
+            return PartialView();
+        }
+        public ActionResult _product3()
         {
             return PartialView();
         }

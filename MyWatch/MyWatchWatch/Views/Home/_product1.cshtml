@@ -1,7 +1,7 @@
 ﻿@using MyWatchWatch.Models
 @model IEnumerable<Product>
 
-@foreach (var item in Model)
+@foreach (var item in Model.Take(4))
 {
 <div class="col-md-3 product-left">
     <div class="product-main simpleCart_shelfItem">

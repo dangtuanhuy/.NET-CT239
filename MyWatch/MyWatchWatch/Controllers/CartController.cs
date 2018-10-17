@@ -132,9 +132,9 @@ namespace MyWatchWatch.Controllers
         {
             if (ModelState.IsValid)
             {
-                //var userId = User.Identity.GetUserName();
+                var userId = Session["username"];
                 order.OrderDate = DateTime.Now;
-                //order.CustomerCode = userId;
+                order.CustomerCode = Convert.ToString(userId);
                 //order.UserId = null;
                 order.Order_Status = false;
                 db.Orders.Add(order);
@@ -161,6 +161,10 @@ namespace MyWatchWatch.Controllers
                 Session["GioHang"] = null;
                 return RedirectToAction("XemGioHang", "Cart");
             }
+            return View();
+        }
+        public ActionResult Susses()
+        {
             return View();
         }
     }

@@ -193,6 +193,9 @@
     <Compile Include="Areas\Management\Models\LoginViewModel.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginUserController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\TypeWatchController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -229,6 +232,7 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ItemGioHang.cs" />
+    <Compile Include="Models\LoginU.cs" />
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -920,6 +924,17 @@
     <Content Include="Views\Cart\XemGioHang.cshtml" />
     <Content Include="Views\Cart\ThongBao.cshtml" />
     <Content Include="Views\Cart\ShoppingPartial.cshtml" />
+    <Content Include="Views\Home\_product3.cshtml" />
+    <Content Include="Views\TypeWatch\Men.cshtml" />
+    <Content Include="Views\TypeWatch\Women.cshtml" />
+    <Content Include="Views\TypeWatch\Kids.cshtml" />
+    <Content Include="Views\LoginUser\LoginU.cshtml" />
+    <Content Include="Views\LoginUser\LoginCart.cshtml" />
+    <Content Include="Views\LoginUser\View.cshtml" />
+    <Content Include="Views\Register\Register.cshtml" />
+    <Content Include="Views\Register\Success.cshtml" />
+    <Content Include="Views\Cart\Susses.cshtml" />
+    <Content Include="Views\Cart\ConfirmCheckOut.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
