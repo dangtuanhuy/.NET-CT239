@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -10,7 +12,7 @@ using MyWatchWatch.Models;
 
 namespace MyWatchWatch.Areas.Management.Controllers
 {
-    public class ProductsController : Controller
+    public class ProductsController : BaseController
     {
         private MyWatchWatchEntities db = new MyWatchWatchEntities();
 
@@ -54,8 +56,22 @@ namespace MyWatchWatch.Areas.Management.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Products.Add(product);
-                db.SaveChanges();
+                try
+                {
+                    product.Create_Product = DateTime.Now;
+                    db.Products.Add(product);
+                    db.SaveChanges();
+                }
+                catch (DbEntityValidationException dbEx)
+                {
+                    foreach (var validationErrors in dbEx.EntityValidationErrors)
+                    {
+                        foreach (var validationError in validationErrors.ValidationErrors)
+                        {
+                            System.Console.WriteLine("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                        }
+                    }
+                }
                 return RedirectToAction("Index");
             }
 
@@ -92,8 +108,23 @@ namespace MyWatchWatch.Areas.Management.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(product).State = EntityState.Modified;
-                db.SaveChanges();
+                try
+                {
+                    product.Create_Product = DateTime.Now;
+                    db.Entry(product).State = EntityState.Modified;
+                    db.SaveChanges();
+                }
+
+                catch (DbEntityValidationException dbEx)
+                {
+                    foreach (var validationErrors in dbEx.EntityValidationErrors)
+                    {
+                        foreach (var validationError in validationErrors.ValidationErrors)
+                        {
+                            System.Console.WriteLine("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                        }
+                    }
+                }
                 return RedirectToAction("Index");
             }
             ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "CategoryName", product.CategoryId);
@@ -123,11 +154,89 @@ namespace MyWatchWatch.Areas.Management.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Product product = db.Products.Find(id);
-            db.Products.Remove(product);
-            db.SaveChanges();
+            try
+            {
+                db.Products.Remove(product);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch (Exception e)
+            {
+                TempData["msg1"] = "<script>alert('Can not Delete Record');</script>";
+                e.ToString();
+            }
             return RedirectToAction("Index");
         }
+        public ActionResult UploadProducts(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Index");
+            }
+            var products = db.Products.Include(s => s.ImgProducts).SingleOrDefault(p => p.ProductId == id);
+            if (products == null)
+            {
+                object Err = "Information not find";
+                return View("Error", Err);
+            }
+            return View(products);
+        }
+        [HttpPost]
+        public ActionResult UploadProducts(int id, HttpPostedFileBase[] files)
+        {
+            byte max = 0;
+            var listImg = db.ImgProducts.Where(p => p.ProductId == id).ToList();
+            if (listImg.Count > 0)
+                max = listImg.Max(p => p.SortImg);
+            var listFile = files.Where(p => p != null);
+            foreach (var f in listFile)
+            {
+                //Tạo một đối tượng
+                var img = new ImgProduct();
+                img.ProductId = id;
+                img.Img_Product = f.FileName;
+                img.SortImg = ++max;
+                db.ImgProducts.Add(img);
+                var path = Server.MapPath("~/MyImg/Products/" + f.FileName);
+                f.SaveAs(path);
+            }
+            if (listFile.Any())
+                db.SaveChanges();
+            return RedirectToAction("UploadProducts");
+        }
+        public ActionResult DeleteImg(int id, int? ProductId)
+        {
+            if (ProductId.HasValue)
+            {
+                try
+                {
+                    var img = db.ImgProducts.Find(id);
+                    if (img == null)
+                        return RedirectToAction("Index");
+                    db.ImgProducts.Remove(img);
+                    var fileName = img.Img_Product;
+                    var path = Server.MapPath("~/MyImg/Products/" + fileName);
+                    var file = new FileInfo(path);
 
+                    if (file.Exists)
+                    {
+                        file.Delete();
+                    }
+
+                    db.SaveChanges();
+                    return RedirectToAction("UploadProducts");
+                }
+
+                catch (Exception ex)
+                {
+                    object mess = "Không thể xóa IMG " + ex.Message;
+                    return View("Error", mess);
+                }
+            }
+
+            TempData["Success_Mess"] = "<script>alert('Delete Success')</script>";
+            return Redirect("~/Products/UploadProducts/" + ProductId);
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

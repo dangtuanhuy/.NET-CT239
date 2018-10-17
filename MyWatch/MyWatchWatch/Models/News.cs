@@ -23,7 +23,6 @@ namespace MyWatchWatch.Models
         public int NewsId { get; set; }
         public string NewTitles { get; set; }
         public string NewsDetails { get; set; }
-        public string NewsBy { get; set; }
         public Nullable<System.DateTime> NewsDate { get; set; }
         public string EmployeeCode { get; set; }
     

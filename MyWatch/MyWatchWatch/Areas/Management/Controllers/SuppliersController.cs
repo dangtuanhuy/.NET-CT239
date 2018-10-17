@@ -1,16 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using MyWatchWatch.Models;
 
 namespace MyWatchWatch.Areas.Management.Controllers
 {
-    public class SuppliersController : Controller
+    public class SuppliersController : BaseController
     {
         private MyWatchWatchEntities db = new MyWatchWatchEntities();
 
@@ -50,8 +48,22 @@ namespace MyWatchWatch.Areas.Management.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Suppliers.Add(supplier);
-                db.SaveChanges();
+                try
+                {
+                    supplier.Create_Supplier = DateTime.Now;
+                    db.Suppliers.Add(supplier);
+                    db.SaveChanges();
+                }
+                catch (DbEntityValidationException dbEx)
+                {
+                    foreach (var validationErrors in dbEx.EntityValidationErrors)
+                    {
+                        foreach (var validationError in validationErrors.ValidationErrors)
+                        {
+                            System.Console.WriteLine("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                        }
+                    }
+                }
                 return RedirectToAction("Index");
             }
 
@@ -82,9 +94,23 @@ namespace MyWatchWatch.Areas.Management.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(supplier).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                try
+                {
+                    db.Entry(supplier).State = EntityState.Modified;
+                    supplier.Create_Supplier = DateTime.Now;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                catch (DbEntityValidationException dbEx)
+                {
+                    foreach (var validationErrors in dbEx.EntityValidationErrors)
+                    {
+                        foreach (var validationError in validationErrors.ValidationErrors)
+                        {
+                            System.Console.WriteLine("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                        }
+                    }
+                }
             }
             return View(supplier);
         }
@@ -110,8 +136,17 @@ namespace MyWatchWatch.Areas.Management.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Supplier supplier = db.Suppliers.Find(id);
-            db.Suppliers.Remove(supplier);
-            db.SaveChanges();
+            try
+            {
+                db.Suppliers.Remove(supplier);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch (Exception e)
+            {
+                TempData["msg1"] = "<script>alert('Can not Delete Record');</script>";
+                e.ToString();
+            }
             return RedirectToAction("Index");
         }
 

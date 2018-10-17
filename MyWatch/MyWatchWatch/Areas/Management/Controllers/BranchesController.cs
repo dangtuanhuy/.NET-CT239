@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -10,7 +11,7 @@ using MyWatchWatch.Models;
 
 namespace MyWatchWatch.Areas.Management.Controllers
 {
-    public class BranchesController : Controller
+    public class BranchesController : BaseController
     {
         private MyWatchWatchEntities db = new MyWatchWatchEntities();
 
@@ -39,7 +40,7 @@ namespace MyWatchWatch.Areas.Management.Controllers
         // GET: Management/Branches/Create
         public ActionResult Create()
         {
-            ViewBag.EmployeeCode = new SelectList(db.Employees, "EmployeeCode", "EmployeePass");
+            ViewBag.EmployeeCode = new SelectList(db.Employees, "EmployeeCode", "EmployeeCode");
             return View();
         }
 
@@ -52,12 +53,25 @@ namespace MyWatchWatch.Areas.Management.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Branches.Add(branch);
-                db.SaveChanges();
+                try
+                {
+                    db.Branches.Add(branch);
+                    db.SaveChanges();
+                }
+                catch (DbEntityValidationException dbEx)
+                {
+                    foreach (var validationErrors in dbEx.EntityValidationErrors)
+                    {
+                        foreach (var validationError in validationErrors.ValidationErrors)
+                        {
+                            System.Console.WriteLine("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                        }
+                    }
+                }
                 return RedirectToAction("Index");
             }
 
-            ViewBag.EmployeeCode = new SelectList(db.Employees, "EmployeeCode", "EmployeePass", branch.EmployeeCode);
+            ViewBag.EmployeeCode = new SelectList(db.Employees, "EmployeeCode", "EmployeeCode", branch.EmployeeCode);
             return View(branch);
         }
 
@@ -73,7 +87,7 @@ namespace MyWatchWatch.Areas.Management.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.EmployeeCode = new SelectList(db.Employees, "EmployeeCode", "EmployeePass", branch.EmployeeCode);
+            ViewBag.EmployeeCode = new SelectList(db.Employees, "EmployeeCode", "EmployeeCode", branch.EmployeeCode);
             return View(branch);
         }
 
@@ -86,11 +100,24 @@ namespace MyWatchWatch.Areas.Management.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(branch).State = EntityState.Modified;
-                db.SaveChanges();
+                try
+                {
+                    db.Entry(branch).State = EntityState.Modified;
+                    db.SaveChanges();
+                }
+                catch (DbEntityValidationException dbEx)
+                {
+                    foreach (var validationErrors in dbEx.EntityValidationErrors)
+                    {
+                        foreach (var validationError in validationErrors.ValidationErrors)
+                        {
+                            System.Console.WriteLine("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                        }
+                    }
+                }
                 return RedirectToAction("Index");
             }
-            ViewBag.EmployeeCode = new SelectList(db.Employees, "EmployeeCode", "EmployeePass", branch.EmployeeCode);
+            ViewBag.EmployeeCode = new SelectList(db.Employees, "EmployeeCode", "EmployeeCode", branch.EmployeeCode);
             return View(branch);
         }
 
@@ -115,8 +142,17 @@ namespace MyWatchWatch.Areas.Management.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Branch branch = db.Branches.Find(id);
-            db.Branches.Remove(branch);
-            db.SaveChanges();
+            try
+            {
+                db.Branches.Remove(branch);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch (Exception e)
+            {
+                TempData["msg1"] = "<script>alert('Can not Delete Record');</script>";
+                e.ToString();
+            }
             return RedirectToAction("Index");
         }
 
