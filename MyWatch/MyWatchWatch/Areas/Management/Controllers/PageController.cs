@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace MyWatchWatch.Areas.Management.Controllers
 {
-    public class PageController : Controller
+    public class PageController : BaseController
     {
         private MyWatchWatchEntities db = new MyWatchWatchEntities();
         // GET: Management/Page
@@ -31,6 +31,26 @@ namespace MyWatchWatch.Areas.Management.Controllers
         {
             var countCus = db.Customers.Count();
             ViewBag.countCus = countCus;
+            return PartialView();
+        }
+        public ActionResult _CountNews()
+        {
+            var countNews = db.News.Count();
+            ViewBag.countNews = countNews;
+            return PartialView();
+        }
+        public ActionResult _countCart()
+        {
+            var countCarts = (from p in db.Orders select p).Count();
+
+            ViewBag.countCarts = countCarts;
+            return PartialView();
+        }
+        public ActionResult _countContacts()
+        {
+            var statusContacts = (from p in db.Contacts where p.Status == false select p).Count();
+
+            ViewBag.statusContacts = statusContacts;
             return PartialView();
         }
     }

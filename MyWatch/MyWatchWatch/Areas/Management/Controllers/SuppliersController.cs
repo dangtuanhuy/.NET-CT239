@@ -8,7 +8,7 @@ using MyWatchWatch.Models;
 
 namespace MyWatchWatch.Areas.Management.Controllers
 {
-    public class SuppliersController : Controller
+    public class SuppliersController : BaseController
     {
         private MyWatchWatchEntities db = new MyWatchWatchEntities();
 

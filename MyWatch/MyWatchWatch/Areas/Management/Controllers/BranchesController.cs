@@ -11,7 +11,7 @@ using MyWatchWatch.Models;
 
 namespace MyWatchWatch.Areas.Management.Controllers
 {
-    public class BranchesController : Controller
+    public class BranchesController : BaseController
     {
         private MyWatchWatchEntities db = new MyWatchWatchEntities();
 

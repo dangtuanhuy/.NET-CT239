@@ -12,7 +12,7 @@ using MyWatchWatch.Models;
 
 namespace MyWatchWatch.Areas.Management.Controllers
 {
-    public class EmployeesController : Controller
+    public class EmployeesController : BaseController
     {
         private MyWatchWatchEntities db = new MyWatchWatchEntities();
 
