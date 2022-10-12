@@ -15,6 +15,7 @@ namespace MyWatchWatch.Models
         public List<ImgProduct> ImgPro { get; set; }
         public String ProductName { get; set; }
         public Decimal ThanhTien { get; set; }
+        public int ProductQty { get; set; }
 
         public ItemGioHang(int ProductId)
         {
@@ -27,7 +28,7 @@ namespace MyWatchWatch.Models
                 this.ProductSold = pro.ProductSold.Value;
                 this.ThanhTien = pro.ProductSold.Value * this.ProductQtyUser;
                 this.ImgPro = pro.ImgProducts.ToList();
-
+                this.ProductQty = pro.ProductQty.Value;
             }
         }
     }

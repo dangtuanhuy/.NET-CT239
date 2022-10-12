@@ -1,11 +1,19 @@
 ﻿
 @{
-                /**/
+    /**/
 
-                ViewBag.Title = "Page";
-                Layout = "~/Areas/Management/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "Page";
+    Layout = "~/Areas/Management/Views/Shared/_AdminLayout.cshtml";
 }
+<section class="dashboard-header section-padding">
+    <div class="container-fluid">
+        <div class="row d-flex align-items-md-stretch">
+            <h2 class="text-xl-center">Nominal annual income</h2>
 
+            <img src="@Url.Action("ChartColumn")" alt="Chart" />
+        </div>
+    </div>
+</section>
 <section class="dashboard-header section-padding">
     <div class="container-fluid">
         <div class="row d-flex align-items-md-stretch">

@@ -1,4 +1,5 @@
-﻿@using MyWatchWatch.Models
+﻿
+@using MyWatchWatch.Models
 @model IEnumerable<Product>
 
 @foreach (var item in Model.Take(4))
@@ -6,6 +7,7 @@
     <div class="col-md-3 product-left">
         <div class="product-main simpleCart_shelfItem">
             <a href="@Url.Action("Details", "Home", new { id = item.ProductId })" class=""><img class="img-responsive zoom-img" src="~/MyImg/Products/@item.ImgProducts.FirstOrDefault().Img_Product" alt="" /></a>
+            @*<a href="single.html" class="mask"><img class="img-responsive zoom-img" src="~/Library/User/images/p-1.png" alt="" /></a>*@
             <div class="img-overlay">
             </div>
             <div class="product-bottom text-center">
@@ -17,5 +19,5 @@
                 <span>@item.Promotion.PromotionDiscount%</span>
             </div>
         </div>
-    </div>  
+    </div>
 }

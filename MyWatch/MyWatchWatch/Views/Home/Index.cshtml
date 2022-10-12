@@ -6,6 +6,7 @@
 @{ 
     IEnumerable<Product> ListProduct1 = ViewBag.ListProduct1 as IEnumerable<Product>;
     IEnumerable<Product> ListProduct2 = ViewBag.ListProduct2 as IEnumerable<Product>;
+    IEnumerable<Product> ListProduct3 = ViewBag.ListProduct3 as IEnumerable<Product>;
 }
 
 <div class="bnr" id="home">
@@ -26,12 +27,19 @@
 <div class="product">
     <div class="container">
         <div class="product-top">
+            <h2 style="text-align:center; color:blue;">Styte Men Best Seller</h2>
             <div class="product-one">
                 @Html.Partial("~/Views/Home/_product1.cshtml", ListProduct1)
                 <div class="clearfix"></div>
             </div>
+            <h2 style="text-align:center; color:blue;">Styte Women Best Seller</h2>
             <div class="product-one">
                 @Html.Partial("~/Views/Home/_product2.cshtml", ListProduct2)
+                <div class="clearfix"></div>
+            </div>
+            <h2 style="text-align:center; color:blue;">Styte Kids Best Seller</h2>
+            <div class="product-one">
+                @Html.Partial("~/Views/Home/_product3.cshtml", ListProduct3)
                 <div class="clearfix"></div>
             </div>
         </div>

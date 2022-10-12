@@ -167,6 +167,7 @@
           <Property Name="CategoryId" Type="int" />
           <Property Name="PromotionId" Type="int" />
           <Property Name="Create_Product" Type="date" />
+          <Property Name="Style" Type="int" />
         </EntityType>
         <EntityType Name="Promotion">
           <Key>
@@ -760,6 +761,7 @@
           <Property Name="CategoryId" Type="Int32" />
           <Property Name="PromotionId" Type="Int32" />
           <Property Name="Create_Product" Type="DateTime" Precision="0" />
+          <Property Name="Style" Type="Int32" />
           <NavigationProperty Name="Category" Relationship="MyWatchWatchModel.FK_Products_Category" FromRole="Product" ToRole="Category" />
           <NavigationProperty Name="ImgProducts" Relationship="MyWatchWatchModel.FK_ImgProducts_Products" FromRole="Product" ToRole="ImgProduct" />
           <NavigationProperty Name="OrderDetails" Relationship="MyWatchWatchModel.FK_OrderDetails_Products" FromRole="Product" ToRole="OrderDetail" />
@@ -1181,6 +1183,7 @@
           <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="MyWatchWatchModel.Product">
               <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="Style" ColumnName="Style" />
                 <ScalarProperty Name="Create_Product" ColumnName="Create_Product" />
                 <ScalarProperty Name="PromotionId" ColumnName="PromotionId" />
                 <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
